@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BASE_URL } from '../app.tokens';
-import { Flight } from '../entities/flight';
+import { BASE_URL } from '../../app.tokens';
+import { Flight } from '../../entities/flight';
 import { FlightService } from './flight.service';
 
 @Injectable()

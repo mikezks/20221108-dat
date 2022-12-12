@@ -1,8 +1,6 @@
-import { DefaultFlightService } from './default-flight.service';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit, Optional } from '@angular/core';
-import { Flight } from '../entities/flight';
-import { FlightService } from './flight.service';
+import { Component, OnInit } from '@angular/core';
+import { Flight } from '../../../entities/flight';
+import { FlightService } from '../../data-access/flight.service';
 
 @Component({
   selector: 'app-flight-search',
