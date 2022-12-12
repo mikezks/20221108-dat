@@ -5,16 +5,20 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flight } from '../entities/flight';
+import { BASE_URL } from '../app.tokens';
 
 @Injectable({
   providedIn: 'root',
-  useFactory: (http: HttpClient) => {
+  useFactory: (baseUrl: string, http: HttpClient) => {
     if (environment.useDummy) {
       return new DummyFlightService;
     }
-    return new DefaultFlightService(http);
+    return new DefaultFlightService(baseUrl, http);
   },
-  deps: [HttpClient]
+  deps: [
+    BASE_URL,
+    HttpClient
+  ]
 })
 export abstract class FlightService {
 

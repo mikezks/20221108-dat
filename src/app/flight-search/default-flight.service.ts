@@ -1,16 +1,19 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BASE_URL } from '../app.tokens';
 import { Flight } from '../entities/flight';
 import { FlightService } from './flight.service';
 
 @Injectable()
 export class DefaultFlightService implements FlightService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    @Inject(BASE_URL) private baseUrl: string,
+    private http: HttpClient) { }
 
   find(from: string, to: string): Observable<Flight[]> {
-    const url = 'https://demo.angulararchitects.io/api/flight';
+    const url = this.baseUrl + 'flight';
 
     const params = new HttpParams()
       .set('from', from)
