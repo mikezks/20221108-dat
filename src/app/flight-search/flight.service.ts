@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { DummyFlightService } from './dummy-flight.service';
 import { DefaultFlightService } from './default-flight.service';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
@@ -7,7 +8,13 @@ import { Flight } from '../entities/flight';
 
 @Injectable({
   providedIn: 'root',
-  useClass: DefaultFlightService
+  useFactory: (http: HttpClient) => {
+    if (environment.useDummy) {
+      return new DummyFlightService;
+    }
+    return new DefaultFlightService(http);
+  },
+  deps: [HttpClient]
 })
 export abstract class FlightService {
 
