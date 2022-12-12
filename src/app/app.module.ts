@@ -1,3 +1,5 @@
+import { APP_ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +11,7 @@ import { FlightBookingModule } from './flight-booking/flight-booking.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
 
     CoreModule,
     FlightBookingModule
