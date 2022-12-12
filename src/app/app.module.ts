@@ -1,3 +1,4 @@
+import { DummyFlightService } from './flight-search/dummy-flight.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FormsModule } from '@angular/forms';
+import { FlightService } from './flight-search/flight.service';
 
 @NgModule({
   imports: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FlightSearchComponent
   ],
-  providers: [],
+  providers: [
+    // { provide: FlightService, useClass: DummyFlightService }
+  ],
   bootstrap: [
     AppComponent
   ]
