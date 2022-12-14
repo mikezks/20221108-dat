@@ -6,7 +6,7 @@ import { FlightSearchComponent } from './flight-booking/features/flight-search/f
 export const APP_ROUTES: Routes = [
     {
         path: '',
-        redirectTo: 'flight-edit',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
