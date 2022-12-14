@@ -1,3 +1,4 @@
+import { FlightEditComponent } from './flight-booking/features/flight-edit/flight-edit.component';
 import { HomeComponent } from './core/home/home.component';
 import { Routes } from '@angular/router';
 import { FlightSearchComponent } from './flight-booking/features/flight-search/flight-search.component';
@@ -5,7 +6,7 @@ import { FlightSearchComponent } from './flight-booking/features/flight-search/f
 export const APP_ROUTES: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'flight-edit',
         pathMatch: 'full'
     },
     {
@@ -15,5 +16,9 @@ export const APP_ROUTES: Routes = [
     {
         path: 'flight-search',
         component: FlightSearchComponent
+    },
+    {
+        path: 'flight-edit',
+        component: FlightEditComponent
     }
 ];
