@@ -15,7 +15,10 @@ export class FlightSearchComponent implements OnInit {
   from: string = 'Hamburg';
   to = 'Graz';
   flights: Flight[] = [];
-  selectedFlight: Flight | undefined;
+  basket: Record<number, boolean> = {
+    3: true,
+    5: true
+  };
 
   constructor(private flightService: FlightService) { }
 
@@ -28,9 +31,5 @@ export class FlightSearchComponent implements OnInit {
       .subscribe(
         flights => this.flights = flights
       );
-  }
-
-  select(flight: Flight): void {
-    this.selectedFlight = flight;
   }
 }
