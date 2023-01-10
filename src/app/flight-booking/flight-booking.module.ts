@@ -1,3 +1,4 @@
+import { FlightBookingRoutingModule } from './flight-booking-routing.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -15,7 +16,7 @@ import { FlightCardComponent } from './ui/flight-card/flight-card.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    FlightBookingRoutingModule,
     SharedModule
   ]
 })
