@@ -7,7 +7,13 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
   styleUrls: ['./flight-card.component.css']
 })
 export class FlightCardComponent implements OnInit, OnDestroy {
-  @Input() item: Flight | undefined;
+  @Input() item: Flight | undefined = {
+      id: 999,
+      from: 'NY',
+      to: 'LA',
+      date: '',
+      delayed: false
+    };
   @Input() selected = false;
   @Output() selectedChange = new EventEmitter<boolean>();
 

@@ -1,3 +1,4 @@
+import { FlightFilter } from './../../../entities/flight-filter';
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../../../entities/flight';
 import { FlightService } from '../../data-access/flight.service';
@@ -23,6 +24,13 @@ export class FlightSearchComponent implements OnInit {
   constructor(private flightService: FlightService) { }
 
   ngOnInit(): void {
+  }
+
+  updateFilter(filter: FlightFilter): void {
+    this.from = filter.from;
+    this.to = filter.to;
+
+    this.search();
   }
 
   search(): void {
